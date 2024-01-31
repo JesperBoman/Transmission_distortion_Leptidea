@@ -161,7 +161,7 @@ for(i in 1:length(df$Chromosome)){
   
   n<-sum(!is.na(c(DE_sum, DLDP_sum, fem_sum, male_sum, rp_sum)))
   AVG <- mean(c(DE_sum, DLDP_sum, fem_sum, male_sum, rp_sum), na.rm=T)
-  WAVG<- (DE_sum*298+DLDP_sum*72+fem_sum*80+male_sum*76+rp_sum*72)/598
+  WAVG<- (DE_sum*298+DLDP_sum*72+fem_sum*80+male_sum*76+rp_sum*73)/599
   filt_df <- rbind(filt_df, cbind(df[i,1:2], AVG, WAVG, n))
 }
 
@@ -171,25 +171,25 @@ head(filt_df)
 
 
 fus_inter_count <- ((mean(filt_df[filt_df$Chromosome == "Chr_7",]$WAVG)
-                     +mean(filt_df[filt_df$Chromosome == "Chr_24",]$WAVG))/2)*598
+                     +mean(filt_df[filt_df$Chromosome == "Chr_24",]$WAVG))/2)*599
 
 fus_inter_count <- fus_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_16",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_27",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_27",]$WAVG))/2)*599
 
 fus_inter_count <- fus_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_20",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_31",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_31",]$WAVG))/2)*599
 
 fus_inter_count <- fus_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_14",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_35",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_35",]$WAVG))/2)*599
 
 fus_inter_count <- fus_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_25",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_37",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_37",]$WAVG))/2)*599
 
 
 fus_inter_count <- fus_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_45",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_47",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_47",]$WAVG))/2)*599
 
-binom.test(round(fus_inter_count), 598*6, p=1/2 )
+binom.test(round(fus_inter_count), 599*6, p=1/2 )
 
 
 
@@ -214,22 +214,22 @@ fus_inter_vector <- c(fus_inter_vector, ((mean(filt_df[filt_df$Chromosome == "Ch
 #Simple fissions inter
 
 fis_inter_count <- ((mean(filt_df[filt_df$Chromosome == "Chr_17",]$WAVG)
-                     +mean(filt_df[filt_df$Chromosome == "Chr_34",]$WAVG))/2)*598
+                     +mean(filt_df[filt_df$Chromosome == "Chr_34",]$WAVG))/2)*599
 
 fis_inter_count <- fis_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_40",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_15",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_15",]$WAVG))/2)*599
 
 fis_inter_count <- fis_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_39",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_38",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_38",]$WAVG))/2)*599
 
 fis_inter_count <- fis_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_10",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_18",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_18",]$WAVG))/2)*599
 
 fis_inter_count <- fis_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_5",]$WAVG)
-                                     +mean(filt_df[filt_df$Chromosome == "Chr_28",]$WAVG))/2)*598
+                                     +mean(filt_df[filt_df$Chromosome == "Chr_28",]$WAVG))/2)*599
 
 
-binom.test(round(fis_inter_count), 598*5, p=1/2 )
+binom.test(round(fis_inter_count), 599*5, p=1/2 )
 
 
 fis_inter_vector <- ((mean(filt_df[filt_df$Chromosome == "Chr_17",]$WAVG)
@@ -249,17 +249,17 @@ fis_inter_vector <- c(fis_inter_vector, ((mean(filt_df[filt_df$Chromosome == "Ch
 #Unpol inter
 
 unpol_inter_count <- ((mean(filt_df[filt_df$Chromosome == "Chr_33",]$WAVG)
-                       +mean(filt_df[filt_df$Chromosome == "Chr_8",]$WAVG))/2)*598
+                       +mean(filt_df[filt_df$Chromosome == "Chr_8",]$WAVG))/2)*599
 
 unpol_inter_count <- unpol_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_41",]$WAVG)
-                                         +mean(filt_df[filt_df$Chromosome == "Chr_46",]$WAVG))/2)*598
+                                         +mean(filt_df[filt_df$Chromosome == "Chr_46",]$WAVG))/2)*599
 
 unpol_inter_count <- unpol_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_44",]$WAVG)
-                                         +mean(filt_df[filt_df$Chromosome == "Chr_36",]$WAVG))/2)*598
+                                         +mean(filt_df[filt_df$Chromosome == "Chr_36",]$WAVG))/2)*599
 
-unpol_inter_count <- unpol_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_4",]$WAVG)))*598
+unpol_inter_count <- unpol_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_4",]$WAVG)))*599
 
-binom.test(round(unpol_inter_count), 598*4, p=1/2 )
+binom.test(round(unpol_inter_count), 599*4, p=1/2 )
 
 
 unpol_inter_vector <- ((mean(filt_df[filt_df$Chromosome == "Chr_33",]$WAVG)
@@ -276,18 +276,18 @@ unpol_inter_vector <- c(unpol_inter_vector, ((mean(filt_df[filt_df$Chromosome ==
 
 #Hom inter
 
-hom_inter_count <- ((mean(filt_df[filt_df$Chromosome == "Chr_1",]$WAVG)))*598
+hom_inter_count <- ((mean(filt_df[filt_df$Chromosome == "Chr_1",]$WAVG)))*599
 
-hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_11",]$WAVG)))*598
+hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_11",]$WAVG)))*599
 
-hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_12",]$WAVG)))*598
+hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_12",]$WAVG)))*599
 
-hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_19",]$WAVG)))*598
+hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_19",]$WAVG)))*599
 
-hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_23",]$WAVG)))*598
+hom_inter_count <- hom_inter_count+((mean(filt_df[filt_df$Chromosome == "Chr_23",]$WAVG)))*599
 
 
-binom.test(round(hom_inter_count), 598*5, p=1/2 )
+binom.test(round(hom_inter_count), 599*5, p=1/2 )
 
 hom_inter_vector <- ((mean(filt_df[filt_df$Chromosome == "Chr_1",]$WAVG)))
 hom_inter_vector <- c(hom_inter_vector, ((mean(filt_df[filt_df$Chromosome == "Chr_11",]$WAVG))))
@@ -369,4 +369,3 @@ ggplot(anDF[anDF$Chr_type != "A",], aes(x=Coverage, fill=Chr_type))+geom_histogr
   scale_fill_manual(name="Chromosome type", values=c("#D81B60", "#1E88E5", "#FFC107", "#004D40", "purple"))+
   geom_histogram()+
   theme(aspect.ratio=1, title= element_text(size=14), legend.position = "right", panel.border = element_rect(colour = "black", fill=NA, size=1), axis.text=element_text(size=14, colour="black"), axis.title=element_text(size=20), legend.text=element_text(size=18),  legend.title=element_text(size=18))
-
