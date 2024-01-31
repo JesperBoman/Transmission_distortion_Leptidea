@@ -333,7 +333,7 @@ hist(aggregate(BE.Cat.Cov~Chromosome, dataF2_frq_wide, mean)[,2])
 
 
 anDF <- aggregate((BE.Swe.Cov+BE.Cat.Cov)/2~Chromosome, dataF2_frq_wide, mean)
-anDF <- aggregate(((DE.Swe.Cov+DE.Cat.Cov)*298+(DLDP.Swe.Cov+DLDP.Cat.Cov)*72+(F2ad_female.Swe.Cov+F2ad_female.Cat.Cov)*80+(F2ad_male.Swe.Cov+F2ad_male.Cat.Cov)*76+(F2RP.Swe.Cov+F2RP.Cat.Cov)*72)/(2*598)~Chromosome, dataF2_frq_wide, mean)
+anDF <- aggregate(((DE.Swe.Cov+DE.Cat.Cov)*298+(DLDP.Swe.Cov+DLDP.Cat.Cov)*72+(F2ad_female.Swe.Cov+F2ad_female.Cat.Cov)*80+(F2ad_male.Swe.Cov+F2ad_male.Cat.Cov)*76+(F2RP.Swe.Cov+F2RP.Cat.Cov)*73)/(2*599)~Chromosome, dataF2_frq_wide, mean)
 
 colnames(anDF) <- c("Chromosome", "Coverage")
 anDF$Chr_type <- ifelse(anDF$Chromosome == "Chr_2" | anDF$Chromosome == "Chr_3" | anDF$Chromosome == "Chr_48", "Z", "A")
