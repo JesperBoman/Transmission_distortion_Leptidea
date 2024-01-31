@@ -332,7 +332,10 @@ hist(aggregate((BE.Swe.Cov+BE.Cat.Cov)/2~Chromosome, dataF2_frq_wide, mean)[,2],
 hist(aggregate(BE.Cat.Cov~Chromosome, dataF2_frq_wide, mean)[,2])
 
 
+#Use first for backcross and second for intercross
+#Backcross
 anDF <- aggregate((BE.Swe.Cov+BE.Cat.Cov)/2~Chromosome, dataF2_frq_wide, mean)
+#Intercross
 anDF <- aggregate(((DE.Swe.Cov+DE.Cat.Cov)*298+(DLDP.Swe.Cov+DLDP.Cat.Cov)*72+(F2ad_female.Swe.Cov+F2ad_female.Cat.Cov)*80+(F2ad_male.Swe.Cov+F2ad_male.Cat.Cov)*76+(F2RP.Swe.Cov+F2RP.Cat.Cov)*73)/(2*599)~Chromosome, dataF2_frq_wide, mean)
 
 colnames(anDF) <- c("Chromosome", "Coverage")
